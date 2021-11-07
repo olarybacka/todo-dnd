@@ -4,7 +4,6 @@ import { FC } from 'react'
 import { Column } from './column'
 import { useTaskListContext } from 'services/TaskContext'
 import { OutlinedAddTaskButton } from 'components/AddTaskButton'
-
 import * as S from './Column.styled'
 
 type Props = {

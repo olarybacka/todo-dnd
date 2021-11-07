@@ -1,7 +1,7 @@
 import { ColumnItem } from 'components/ColumnItem'
 import { Column } from 'components/ColumnItem/column'
-import * as S from './AppContainer.styled'
 import { SolidAddTaskButton } from 'components/AddTaskButton'
+import * as S from './AppContainer.styled'
 
 export const AppContainer = () => {
   const columns: Column[] = [
@@ -13,7 +13,7 @@ export const AppContainer = () => {
   return (
     <S.Container>
       <S.Header>
-        <S.Title>Project tasks </S.Title>
+        <S.Title>Project tasks</S.Title>
         <SolidAddTaskButton />
       </S.Header>
       <S.Content>

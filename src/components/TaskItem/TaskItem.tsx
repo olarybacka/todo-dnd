@@ -1,7 +1,7 @@
 import { DragEvent, FC } from 'react'
-import * as S from './TaskItem.styled'
 import { Task } from './task'
 import { getInitials } from 'utils/getInitials'
+import * as S from './TaskItem.styled'
 
 type Props = {
   task: Task

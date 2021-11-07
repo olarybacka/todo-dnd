@@ -12,4 +12,3 @@ export const TaskListProvider: FC = (props) => (
 )
 
 export const useTaskListContext = () => useContext(TaskListContext)
-

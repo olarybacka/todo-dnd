@@ -14,13 +14,11 @@ export const Section = styled.section`
   border-radius: 7px;
   margin-bottom: 20px;
 `
-
 export const TasksListContainer = styled.div`
   height: calc(100vh - 250px);
   overflow-y: scroll;
   padding: 0 10px;
 `
-
 export const Header = styled.div`
   padding: 20px;
   h2 {

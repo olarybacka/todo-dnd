@@ -24,7 +24,6 @@ export const Body = styled.div`
   overflow: hidden;
   width: calc(100% - 50px);
 `
-
 export const Avatar = styled.div`
   width: 30px;
   height: 30px;

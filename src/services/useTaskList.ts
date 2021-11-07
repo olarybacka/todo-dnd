@@ -22,6 +22,7 @@ export const useTaskList = () => {
   const addTask = (task: Task) => {
     setTasks([...tasks, task])
   }
+
   return {
     tasks,
     moveTask,
