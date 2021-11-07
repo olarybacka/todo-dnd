@@ -1,1 +1,1 @@
-export { ColumnContainer } from './ColumnContainer'
+export { ColumnItem } from './ColumnItem'

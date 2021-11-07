@@ -1,8 +1,9 @@
 import { DragEvent } from 'react'
-import { TaskContainer } from 'components/TaskContainer'
+import { TaskItem } from 'components/TaskItem'
 import { FC } from 'react'
 import { Column } from './column'
 import { useTaskListContext } from 'services/TaskContext'
+import { AddTaskButton } from 'components/AddTaskButton'
 
 import * as S from './Column.styled'
 
@@ -14,8 +15,9 @@ const handleDragOver = (e: DragEvent) => {
   e.preventDefault()
 }
 
-export const ColumnContainer: FC<Props> = ({ column }) => {
+export const ColumnItem: FC<Props> = ({ column }) => {
   const { tasks, moveTask } = useTaskListContext()
+  console.log({tasks});
 
   const handleOnDrop = (e: DragEvent) => {
     moveTask(e.dataTransfer.getData('id'), column.category)
@@ -26,9 +28,12 @@ export const ColumnContainer: FC<Props> = ({ column }) => {
       <h2>{column.name}</h2>
       <S.TasksListContainer>
         {tasks
-        .filter(task => task.category === column.category)
-        .map(task => <TaskContainer key={task.id} task={task}/>)}
+          .filter((task) => task.category === column.category)
+          .map((task) => (
+            <TaskItem key={task.id} task={task} />
+          ))}
       </S.TasksListContainer>
+      <AddTaskButton category={column.category} />
     </S.Section>
   )
 }

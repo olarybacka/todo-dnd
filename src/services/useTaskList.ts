@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Task } from 'components/TaskContainer/task'
+import { Task } from 'components/TaskItem/task'
 import { ColumnCategory } from 'components/Columns/column'
 
 const defaultTasks: Task[] = [
@@ -9,8 +9,9 @@ const defaultTasks: Task[] = [
 ]
 
 export type TaskListService = {
-  tasks: Task[],
+  tasks: Task[]
   moveTask: (id: string, category: ColumnCategory) => void
+  addTask: (task: Task) => void
 }
 
 export const useTaskList = () => {
@@ -23,8 +24,13 @@ export const useTaskList = () => {
       ),
     )
   }
+
+  const addTask = (task: Task) => {
+    setTasks([...tasks, task])
+  }
   return {
     tasks,
     moveTask,
+    addTask,
   }
 }
