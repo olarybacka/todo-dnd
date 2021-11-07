@@ -7,11 +7,14 @@ const getRandomNumberOfWords = (max: number) =>
 
 export const getRandomName = () => {
   const startIndex = getRandomIndex()
-  return lorem.slice(startIndex, startIndex + getRandomNumberOfWords(4)).join(' ')
+  return lorem
+    .slice(startIndex, startIndex + getRandomNumberOfWords(4))
+    .join(' ')
 }
 
 export const getRandomDescription = () => {
   const startIndex = getRandomIndex()
-  return lorem.slice(startIndex, startIndex + getRandomNumberOfWords(20)).join(' ')
+  return lorem
+    .slice(startIndex, startIndex + getRandomNumberOfWords(10))
+    .join(' ')
 }
-

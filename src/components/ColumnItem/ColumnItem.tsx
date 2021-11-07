@@ -3,7 +3,7 @@ import { TaskItem } from 'components/TaskItem'
 import { FC } from 'react'
 import { Column } from './column'
 import { useTaskListContext } from 'services/TaskContext'
-import { AddTaskButton } from 'components/AddTaskButton'
+import { OutlinedAddTaskButton } from 'components/AddTaskButton'
 
 import * as S from './Column.styled'
 
@@ -24,7 +24,7 @@ export const ColumnItem: FC<Props> = ({ column }) => {
 
   return (
     <S.Section onDrop={handleOnDrop} onDragOver={handleDragOver}>
-      <h2>{column.name}</h2>
+      <S.Header>{column.name}</S.Header>
       <S.TasksListContainer>
         {tasks
           .filter((task) => task.category === column.category)
@@ -32,7 +32,7 @@ export const ColumnItem: FC<Props> = ({ column }) => {
             <TaskItem key={task.id} task={task} />
           ))}
       </S.TasksListContainer>
-      <AddTaskButton category={column.category} />
+      <OutlinedAddTaskButton category={column.category} />
     </S.Section>
   )
 }

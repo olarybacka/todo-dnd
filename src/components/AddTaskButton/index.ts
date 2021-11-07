@@ -1,1 +1,1 @@
-export { AddTaskButton } from './AddTaskButton'
+export { OutlinedAddTaskButton, SolidAddTaskButton } from './AddTaskButton'

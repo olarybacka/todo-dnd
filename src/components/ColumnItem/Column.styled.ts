@@ -1,14 +1,20 @@
 import styled from 'styled-components'
 
 export const Section = styled.section`
-  width: 200px;
+  min-width: 200px;
+  max-width: 500px;
   background: #dddddd;
-  min-height: 50vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  flex: 1;
 `
 
 export const TasksListContainer = styled.div`
-  height: 100%;
+  height: 500px;
+  overflow-y: scroll;
+`
+
+export const Header = styled.h2`
+  text-transform: uppercase;
 `
