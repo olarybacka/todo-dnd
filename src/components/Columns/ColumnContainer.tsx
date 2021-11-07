@@ -1,3 +1,4 @@
+import { DragEvent } from 'react'
 import { TaskContainer } from 'components/TaskContainer'
 import { FC } from 'react'
 import { Column } from './column'
@@ -9,11 +10,19 @@ type Props = {
   column: Column
 }
 
+const handleDragOver = (e: DragEvent) => {
+  e.preventDefault()
+}
+
 export const ColumnContainer: FC<Props> = ({ column }) => {
   const { tasks } = useTaskListContext()
 
+  const handleOnDrop = (e: DragEvent) => {
+    console.log(e.dataTransfer.getData('id'))
+  }
+
   return (
-    <S.Section>
+    <S.Section onDrop={handleOnDrop} onDragOver={handleDragOver}>
       <h2>{column.name}</h2>
       <S.TasksListContainer>
         {tasks
