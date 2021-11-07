@@ -1,5 +1,5 @@
-import { ColumnItem } from 'components/Columns'
-import { Column } from 'components/Columns/column'
+import { ColumnItem } from 'components/ColumnItem'
+import { Column } from 'components/ColumnItem/column'
 import * as S from './AppContainer.styled'
 
 export const AppContainer = () => {

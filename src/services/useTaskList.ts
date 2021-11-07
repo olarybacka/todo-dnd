@@ -1,12 +1,6 @@
 import { useState } from 'react'
 import { Task } from 'components/TaskItem/task'
-import { ColumnCategory } from 'components/Columns/column'
-
-const defaultTasks: Task[] = [
-  { name: 'task', id: '1', category: 'todo' },
-  { name: 'task2', id: '2', category: 'todo' },
-  { name: 't33', id: '3', category: 'inProgress' },
-]
+import { ColumnCategory } from 'components/ColumnItem/column'
 
 export type TaskListService = {
   tasks: Task[]
@@ -15,7 +9,7 @@ export type TaskListService = {
 }
 
 export const useTaskList = () => {
-  const [tasks, setTasks] = useState<Task[]>(defaultTasks)
+  const [tasks, setTasks] = useState<Task[]>([])
 
   const moveTask = (id: string, category: ColumnCategory) => {
     setTasks(

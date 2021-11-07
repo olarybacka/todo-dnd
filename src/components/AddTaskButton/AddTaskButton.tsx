@@ -1,7 +1,8 @@
 import * as S from './AddTaskButton.style'
-import { ColumnCategory } from 'components/Columns/column'
+import { ColumnCategory } from 'components/ColumnItem/column'
 import { FC } from 'react'
 import { useTaskListContext } from 'services/TaskContext'
+import { getRandomName } from 'utils/getRandomWords'
 
 type Props = {
   category?: ColumnCategory
@@ -12,7 +13,7 @@ export const AddTaskButton: FC<Props> = ({ category = 'todo' }) => {
   const addNewTask = () => {
     addTask({
       id: JSON.stringify(Date.now()),
-      name: 'Task name',
+      name: getRandomName(),
       category,
     })
   }

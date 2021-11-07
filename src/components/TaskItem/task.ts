@@ -1,4 +1,4 @@
-import { ColumnCategory } from 'components/Columns/column'
+import { ColumnCategory } from 'components/ColumnItem/column'
 
 export type Task = {
   name: string,

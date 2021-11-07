@@ -17,7 +17,6 @@ const handleDragOver = (e: DragEvent) => {
 
 export const ColumnItem: FC<Props> = ({ column }) => {
   const { tasks, moveTask } = useTaskListContext()
-  console.log({tasks});
 
   const handleOnDrop = (e: DragEvent) => {
     moveTask(e.dataTransfer.getData('id'), column.category)
