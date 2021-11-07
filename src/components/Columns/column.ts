@@ -1,5 +1,5 @@
 export type Column = {
-  sectionId: SectionId
+  category: ColumnCategory
   name: string
 }
-export type SectionId = 'toDo' | 'inProgress' | 'review' | 'done'
+export type ColumnCategory = 'todo' | 'inProgress' | 'review' | 'done'

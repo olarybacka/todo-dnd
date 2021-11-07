@@ -1,10 +1,13 @@
 import { AppContainer } from 'components/AppContainer'
+import { TaskListProvider } from 'services/TaskContext'
 import './App.css'
 
 function App() {
   return (
     <div className="App">
-      <AppContainer />
+      <TaskListProvider>
+        <AppContainer />
+      </TaskListProvider>
     </div>
   )
 }

@@ -6,6 +6,6 @@ export const Section = styled.section`
   min-height: 50vh;
 `
 
-export const TasksContainer = styled.div`
-  
+export const TasksListContainer = styled.div`
+
 `

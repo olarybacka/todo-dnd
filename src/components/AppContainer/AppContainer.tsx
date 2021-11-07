@@ -5,15 +5,15 @@ import * as S from './AppContainer.styled'
 export const AppContainer = () => {
 
   const columns: Column[] = [
-    { sectionId: 'toDo', name: 'to do' },
-    { sectionId: 'inProgress', name: 'in progress' },
-    { sectionId: 'review', name: 'review' },
-    { sectionId: 'done', name: 'done' },
+    { category: 'todo', name: 'to do' },
+    { category: 'inProgress', name: 'in progress' },
+    { category: 'review', name: 'review' },
+    { category: 'done', name: 'done' },
   ]
   return (
     <S.Container>
       {columns.map((column) => (
-        <ColumnContainer key={column.sectionId} column={column} />
+        <ColumnContainer key={column.category} column={column} />
       ))}
     </S.Container>
   )
