@@ -5,3 +5,7 @@ export const Section = styled.section`
   background: #dddddd;
   min-height: 50vh;
 `
+
+export const TasksContainer = styled.div`
+  
+`

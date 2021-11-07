@@ -1,6 +1,6 @@
 import { ColumnContainer } from 'components/Columns'
 import { Column } from 'components/Columns/column'
-import { Container } from './AppContainer.styled'
+import * as S from './AppContainer.styled'
 
 export const AppContainer = () => {
 
@@ -11,10 +11,10 @@ export const AppContainer = () => {
     { sectionId: 'done', name: 'done' },
   ]
   return (
-    <Container>
+    <S.Container>
       {columns.map((column) => (
         <ColumnContainer key={column.sectionId} column={column} />
       ))}
-    </Container>
+    </S.Container>
   )
 }
