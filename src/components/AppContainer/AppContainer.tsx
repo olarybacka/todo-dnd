@@ -11,16 +11,16 @@ export const AppContainer = () => {
     { category: 'done', name: 'done' },
   ]
   return (
-    <div>
+    <S.Container>
       <S.Header>
-        <h1>Project tasks </h1>
+        <S.Title>Project tasks </S.Title>
         <SolidAddTaskButton />
       </S.Header>
-      <S.Container>
+      <S.Content>
         {columns.map((column) => (
           <ColumnItem key={column.category} column={column} />
         ))}
-      </S.Container>
-    </div>
+      </S.Content>
+    </S.Container>
   )
 }

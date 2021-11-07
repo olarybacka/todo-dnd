@@ -1,9 +1,8 @@
-import { ColumnCategory } from 'components/ColumnItem/column'
 import { FC } from 'react'
-import { useTaskListContext } from 'services/TaskContext'
-import { getRandomName } from 'utils/getRandomWords'
-import { getRandomDescription } from '../../utils/getRandomWords'
 import styled from 'styled-components'
+import { ColumnCategory } from 'components/ColumnItem/column'
+import { useTaskListContext } from 'services/TaskContext'
+import { getRandomName, getRandomDescription } from 'utils/getRandomWords'
 import { colors } from 'utils/colors'
 
 type Props = {
@@ -13,7 +12,7 @@ type Props = {
 
 const AddTaskButton: FC<Props> = ({ category = 'todo', className }) => {
   const { addTask } = useTaskListContext()
-  const addNewTask = () => {
+  const handleClick = () => {
     addTask({
       id: JSON.stringify(Date.now()),
       name: getRandomName(),
@@ -22,18 +21,23 @@ const AddTaskButton: FC<Props> = ({ category = 'todo', className }) => {
     })
   }
   return (
-    <button className={className} onClick={addNewTask}>
+    <button className={className} onClick={handleClick}>
       Add Task
     </button>
   )
 }
 
 export const SolidAddTaskButton = styled(AddTaskButton)`
-  padding: 20px;
+  padding: 0 45px;
   background: ${colors.blue};
   color: ${colors.white};
+  border: none;
+  border-radius: 5px;
 `
 export const OutlinedAddTaskButton = styled(AddTaskButton)`
-  padding: 20px;
+  padding: 10px;
   color: ${colors.blue};
+  background: ${colors.lightGray};
+  border: 1px solid ${colors.gray};
+  font-weight: bold;
 `

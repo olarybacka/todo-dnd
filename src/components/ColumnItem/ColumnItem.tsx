@@ -22,18 +22,20 @@ export const ColumnItem: FC<Props> = ({ column }) => {
     moveTask(e.dataTransfer.getData('id'), column.category)
   }
 
-  const taskToDisplay = tasks.filter(
+  const filteredTasks = tasks.filter(
     (task) => task.category === column.category,
   )
 
   return (
     <S.Section onDrop={handleOnDrop} onDragOver={handleDragOver}>
-      <S.Header>{column.name}</S.Header>
-      <div>
-        {taskToDisplay.length} task{taskToDisplay.length !== 1 && 's'}
-      </div>
+      <S.Header>
+        <h2>{column.name}</h2>
+        <div>
+          {filteredTasks.length} task{filteredTasks.length !== 1 && 's'}
+        </div>
+      </S.Header>
       <S.TasksListContainer>
-        {taskToDisplay.map((task) => (
+        {filteredTasks.map((task) => (
           <TaskItem key={task.id} task={task} />
         ))}
       </S.TasksListContainer>

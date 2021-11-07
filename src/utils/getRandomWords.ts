@@ -15,6 +15,6 @@ export const getRandomName = () => {
 export const getRandomDescription = () => {
   const startIndex = getRandomIndex()
   return lorem
-    .slice(startIndex, startIndex + getRandomNumberOfWords(10))
+    .slice(startIndex, startIndex + getRandomNumberOfWords(15))
     .join(' ')
 }
